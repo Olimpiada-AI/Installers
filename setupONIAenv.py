@@ -10,6 +10,7 @@ import time
 from datetime import datetime
 import sys
 import argparse
+from typing import List
 
 
 # === Configuration ===
@@ -23,6 +24,9 @@ os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
 
 import urllib.request
 import shutil
+
+def run_pip(args: List[str], venv_python: str):
+    subprocess.run([venv_python, "-m", "pip"] + args, check=True)
 
 def download_and_install_python():
     installer_url = "https://www.python.org/ftp/python/3.11.5/python-3.11.5-amd64.exe"
@@ -81,25 +85,38 @@ def check_python_version(ignore_version=False):
 
 # === Step 2: Create virtual environment if it doesn't exist ===
 def create_virtualenv():
+    if args.clean and os.path.exists(VENV_PATH):
+        import shutil
+        log("[CLEAN] Removing existing virtual environment...")
+        shutil.rmtree(VENV_PATH)
+
     if not os.path.exists(VENV_PATH):
         log("[INFO] Creating virtual environment...")
         subprocess.check_call([sys.executable, "-m", "venv", VENV_PATH])
+        subprocess.run([os.path.join(VENV_PATH, "Scripts", "python.exe"), "-m", "ensurepip", "--upgrade"])
     else:
         log("[OK] Virtual environment already exists.")
+
 
 # === Helper: Run a command inside the virtual environment ===
 def run_in_venv(executable, args):
     full_cmd = [executable] + args
-    log(f"[RUN] {' '.join(full_cmd)}")
-    subprocess.check_call(full_cmd)
+    log(f"Running: {executable} + args {args}")
+
+    # Force environment isolation
+    env = os.environ.copy()
+    env["PYTHONNOUSERSITE"] = "1"  # Ignore user site-packages
+    env["PYTHONPATH"] = ""         # Ignore system python path
+
+    subprocess.check_call(full_cmd, env=env)
 
 # === Step 3: Install required packages ===
 def install_requirements():
     python_path = os.path.join(VENV_PATH, "Scripts", "python.exe")
     log("[INFO] Upgrading pip...")
-    run_in_venv(python_path, ["-m", "pip", "install", "--upgrade", "pip"])
+    run_pip(["install", "--upgrade", "pip"], python_path)
     log("[INFO] Installing packages from requirements_3.txt...")
-    run_in_venv(python_path, ["-m", "pip", "install", "-r", REQUIREMENTS_FILE])
+    run_pip(["install", "-r", REQUIREMENTS_FILE], python_path)
 
 
 # === Step 4: Download all NLTK data ===
@@ -169,7 +186,9 @@ def patch_activate_bat():
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="ONIA Environment Setup")
     parser.add_argument("--ignore-version", action="store_true", help="Skip Python version check")
+    parser.add_argument("--clean", action="store_true", help="Delete and recreate the virtual environment")
     args = parser.parse_args()
+
 
     log("=== ONIA Environment Setup & Verification ===")
     try:
