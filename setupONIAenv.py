@@ -21,6 +21,37 @@ LOG_FILE = "install_log.txt"
 
 os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
 
+import urllib.request
+import shutil
+
+def download_and_install_python():
+    installer_url = "https://www.python.org/ftp/python/3.11.5/python-3.11.5-amd64.exe"
+    installer_path = os.path.join(os.getcwd(), "python-3.11.5-amd64.exe")
+
+    log("[INFO] Descărcare installer Python 3.11.5...")
+    with urllib.request.urlopen(installer_url) as response, open(installer_path, 'wb') as out_file:
+        shutil.copyfileobj(response, out_file)
+    log("[OK] Installer descărcat.")
+
+    log("[INFO] Instalare Python 3.11.5 în mod silențios...")
+    result = subprocess.run([
+        installer_path,
+        "/quiet", 
+        "InstallAllUsers=1", 
+        "PrependPath=1", 
+        "Include_test=0", 
+        "SimpleInstall=1"
+    ])
+
+    if result.returncode == 0:
+        log("[OK] Python 3.11.5 instalat.")
+        log("[INFO] Vă rugăm să închideți și să redeschideți terminalul înainte de a continua.")
+        sys.exit(0)
+    else:
+        log("[FATAL] Instalarea Python a eșuat.")
+        sys.exit(1)
+
+
 # === Logging utility ===
 def log(message):
     timestamp = datetime.now().strftime("[%Y-%m-%d %H:%M:%S]")
@@ -34,12 +65,19 @@ def log(message):
 def check_python_version(ignore_version=False):
     version = platform.python_version()
     if ignore_version:
-        log(f"[WARN] Skipping Python version check. Running on: {version}")
+        log(f"[WARN] Ignorăm verificarea versiunii. Detected: {version}")
         return
+
     if version != REQUIRED_PYTHON_VERSION:
-        log(f"[ERROR] Python {REQUIRED_PYTHON_VERSION} is required. Found: {version}")
-        sys.exit(1)
-    log(f"[OK] Python version {version} is compatible.")
+        log(f"[ERROR] Versiunea Python {REQUIRED_PYTHON_VERSION} este necesară. Detectat: {version}")
+        answer = input("❓ Vrei să instalăm automat Python 3.11.5 acum? [y/n]: ").strip().lower()
+        if answer == 'y':
+            download_and_install_python()
+        else:
+            log("❌ Instalarea s-a oprit. Te rugăm instalează Python manual.")
+            sys.exit(1)
+    else:
+        log(f"[OK] Python {version} este compatibil.")
 
 # === Step 2: Create virtual environment if it doesn't exist ===
 def create_virtualenv():
@@ -57,9 +95,12 @@ def run_in_venv(executable, args):
 
 # === Step 3: Install required packages ===
 def install_requirements():
-    pip_path = os.path.join(VENV_PATH, "Scripts", "pip.exe")
-    run_in_venv(pip_path, ["install", "--upgrade", "pip"])
-    run_in_venv(pip_path, ["install", "-r", REQUIREMENTS_FILE])
+    python_path = os.path.join(VENV_PATH, "Scripts", "python.exe")
+    log("[INFO] Upgrading pip...")
+    run_in_venv(python_path, ["-m", "pip", "install", "--upgrade", "pip"])
+    log("[INFO] Installing packages from requirements_3.txt...")
+    run_in_venv(python_path, ["-m", "pip", "install", "-r", REQUIREMENTS_FILE])
+
 
 # === Step 4: Download all NLTK data ===
 def download_nltk():
