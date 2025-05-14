@@ -1,7 +1,6 @@
 
-# ONIA - Instalator Mediu AI 🧠🇷🇴
-
-Acest proiect automatizează instalarea și verificarea completă a unui mediu Python pentru inteligență artificială, procesare de date și competiții educaționale (ex: ONIA).
+# OlimpiadaAI - Instalator Windows (in mare parte compatibil si cu Mac/Ubuntu; todo next)
+Acest proiect automatizează instalarea și verificarea completă a unui mediu Python pentru inteligență artificială, procesare de date și competiții educaționale.
 
 ---
 
@@ -13,28 +12,27 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
 | `requirements_3.txt`         | Lista tuturor pachetelor Python necesare                                  |
 | `packages_to_check.py`       | Script de test pentru importul pachetelor                                 |
 | `start_onia_env.cmd`         | Script CMD pentru activarea rapidă a mediului și setarea variabilelor     |
-| `install_log.txt`            | (Generat automat) Jurnal al instalării și testelor                        |
 
 ---
 
 ## 🔧 Cerințe minime
 
-- ✅ **Python 3.11.5** (versiune recomandată)
+- ✅ **Python 3.11.5** (versiune recomandată la momentul actual)
 - ✅ Windows 10 / 11
 - ✅ Conexiune la internet (pentru descărcarea pachetelor)
-- ✅ Permisiuni de scriere în `C:\`
+- ✅ Permisiuni de scriere în `C:\` 
 
 ---
 
 ## 🔄 Instalare completă
-
-Deschide un terminal CMD sau PowerShell în acest folder și rulează:
+- Cloneaza sau downloadeaza acest repository
+- Deschide un terminal CMD sau PowerShell în acest folder (ideal ca administrator) și rulează:
 
 ```
 python setupONIAenv.py
 ```
 
-Dacă nu ai versiunea exactă de Python 3.11.5, poți forța instalarea cu:
+Dacă nu ai versiunea exactă de Python 3.11.5, poți forța instalarea cu versiunea locala de python cu:
 
 ```
 python setupONIAenv.py --ignore-version
@@ -51,8 +49,7 @@ Scriptul va:
 
 ---
 
-## ✅ Verificarea mediului
-
+## ✅ Verificarea mediului (Optional, deja se efectueaza in pasul anterior)
 Poți verifica manual dacă totul funcționează cu:
 
 ```cmd
@@ -68,7 +65,7 @@ python setupONIAenv.py
 
 ---
 
-## 🧠 Activarea mediului
+##  Activarea mediului
 
 Rulează:
 
@@ -76,7 +73,7 @@ Rulează:
 start_onia_env.cmd
 ```
 
-Acesta:
+Acesta va:
 
 - Activează mediul virtual `C:\ONIAenv`
 - Setează variabila `TF_ENABLE_ONEDNN_OPTS=0`
