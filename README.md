@@ -18,10 +18,23 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
 
 ## 🔧 Cerințe minime
 
-- ✅ **Python 3.11.5** (versiune recomandată la momentul actual)
+- ✅ **Python 3.11.5** (versiune recomandată la momentul actual, se poate instala cu scriptul automat vedeti mai jos)
 - ✅ Windows 10 / 11
 - ✅ Conexiune la internet (pentru descărcarea pachetelor)
-- ✅ Permisiuni de scriere în `C:\` 
+- ✅ Permisiuni de scriere în `C:\`
+
+  Daca nu aveti instalat Python 3.11.5, o sa vi se ceara acordul pentru instalare, apoi trebuie sa inchdeti terminalul si sa deschideti unul nou cu aceeasi comanda.
+
+```
+[2025-05-14 15:30:57] [ERROR] Versiunea Python 3.11.5 este necesară. Detectat: 3.13.1
+❓ Vrei să instalăm automat Python 3.11.5 acum? [y/n]: y
+[2025-05-14 15:31:01] [INFO] Descărcare installer Python 3.11.5...
+[2025-05-14 15:31:09] [OK] Installer descărcat.
+[2025-05-14 15:31:09] [INFO] Instalare Python 3.11.5 în mod silențios...
+[2025-05-14 15:31:32] [OK] Python 3.11.5 instalat.
+[2025-05-14 15:31:32] [INFO] Vă rugăm să închideți și să redeschideți terminalul înainte de a continua.
+PS C:\Users\Student\Installers-main> python .\setupONIAenv.py
+```
 
 ---
 
