@@ -1,5 +1,6 @@
 
-# OlimpiadaAI - Instalator Windows (in mare parte compatibil si cu Mac/Ubuntu; todo next)
+# OlimpiadaAI - Instalator Windows 
+(in mare parte compatibil si cu Mac/Ubuntu; todo next)
 Acest proiect automatizează instalarea și verificarea completă a unui mediu Python pentru inteligență artificială, procesare de date și competiții educaționale.
 
 ---
