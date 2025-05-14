@@ -29,9 +29,9 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
   ```
   python setupONIAenv.py
   ```
+
+  Daca nu aveti **Python 3.11.5**, se va instala (vezi output-ul de mai jos), insa va trebui sa redeshideti terminalul si sa rulati aceeasi comanda din nou pentru continuarea instalaroii.
   
-- Cerinte: **Python 3.11.5**  - versiune recomandată la momentul actual. Daca exista orice alta versiune se va instala, daca sunteti de acord aceasta versiune automat (va trebui insa sa inchideti terminalul si sa rulati scriptul din nou).
-  (In mod deosebit PC-urile din FMI au instalat deja 3.13, asa ca se va instala aditional noua versiune).
 ```
 [2025-05-14 15:30:57] [ERROR] Versiunea Python 3.11.5 este necesară. Detectat: 3.13.1
 ❓ Vrei să instalăm automat Python 3.11.5 acum? [y/n]: y
@@ -43,7 +43,7 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
 PS C:\Users\Student\Installers-main> python .\setupONIAenv.py
 ```
 
-Pentru dezintalare sau reluarea procesului in caz de eroare:
+- Pentru dezintalare sau reluarea procesului in caz de eroare:
 ```
 python setupONIAenv.py --clean
 ```
