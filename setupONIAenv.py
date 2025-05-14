@@ -181,6 +181,34 @@ def patch_activate_bat():
 
     log("[INFO] Patched activate.bat to set TF_ENABLE_ONEDNN_OPTS=0.")
 
+def install_vscode_extensions():
+    log("[INFO] Checking for VS Code executable...")
+
+    # Common install locations
+    possible_paths = [
+        os.path.join(os.environ.get("ProgramFiles", ""), "Microsoft VS Code", "bin", "code.cmd"),
+        os.path.join(os.environ.get("ProgramFiles", ""), "Microsoft VS Code", "Code.exe"),
+        os.path.join(os.environ.get("LocalAppData", ""), "Programs", "Microsoft VS Code", "bin", "code.cmd"),
+        os.path.join(os.environ.get("LocalAppData", ""), "Programs", "Microsoft VS Code", "Code.exe"),
+    ]
+
+    code_path = None
+    for path in possible_paths:
+        if os.path.isfile(path):
+            code_path = path
+            break
+
+    if code_path is None:
+        log("[WARN] VS Code not found. Please install the Jupyter and Python extensions manually.")
+        return
+
+    log(f"[OK] Found VS Code at: {code_path}")
+    try:
+        subprocess.check_call([code_path, "--install-extension", "ms-toolsai.jupyter", "--force"])
+        subprocess.check_call([code_path, "--install-extension", "ms-python.python", "--force"])
+        log("[OK] VS Code extensions installed successfully.")
+    except subprocess.CalledProcessError as e:
+        log(f"[ERROR] Failed to install extensions: {e}")
 
 # === Main entry point ===
 if __name__ == "__main__":
@@ -189,6 +217,8 @@ if __name__ == "__main__":
     parser.add_argument("--clean", action="store_true", help="Delete and recreate the virtual environment")
     args = parser.parse_args()
 
+
+    install_vscode_extensions()
 
     log("=== ONIA Environment Setup & Verification ===")
     try:
