@@ -66,7 +66,7 @@ Scriptul va:
 4. Păstra jurnalul în `install_log.txt`
 5. Testa importurile și Jupyter Lab
 6. Configura variabila `TF_ENABLE_ONEDNN_OPTS=0` pentru TensorFlow
-
+7. Instaleaza plugin-ul de jupyter pentru VSCode.
 ---
 
 Acesta va:
