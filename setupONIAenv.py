@@ -1,0 +1,145 @@
+# Skip Python version check
+#python setupONIAenv.py --ignore-version
+
+import sys
+import subprocess
+import os
+import platform
+import socket
+import time
+from datetime import datetime
+import sys
+import argparse
+
+
+# === Configuration ===
+REQUIRED_PYTHON_VERSION = "3.11.5"
+VENV_PATH = r"C:\ONIAenv"
+REQUIREMENTS_FILE = "requirements_3.txt"
+CHECK_SCRIPT = "packages_to_check.py"
+LOG_FILE = "install_log.txt"
+
+os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
+
+# === Logging utility ===
+def log(message):
+    timestamp = datetime.now().strftime("[%Y-%m-%d %H:%M:%S]")
+    line = f"{timestamp} {message}"
+    print(line)
+    # Use UTF-8 to avoid UnicodeEncodeError when writing emojis
+    with open(LOG_FILE, "a", encoding="utf-8") as f:
+        f.write(line + "\n")
+
+# === Step 1: Check Python version ===
+def check_python_version(ignore_version=False):
+    version = platform.python_version()
+    if ignore_version:
+        log(f"[WARN] Skipping Python version check. Running on: {version}")
+        return
+    if version != REQUIRED_PYTHON_VERSION:
+        log(f"[ERROR] Python {REQUIRED_PYTHON_VERSION} is required. Found: {version}")
+        sys.exit(1)
+    log(f"[OK] Python version {version} is compatible.")
+
+# === Step 2: Create virtual environment if it doesn't exist ===
+def create_virtualenv():
+    if not os.path.exists(VENV_PATH):
+        log("[INFO] Creating virtual environment...")
+        subprocess.check_call([sys.executable, "-m", "venv", VENV_PATH])
+    else:
+        log("[OK] Virtual environment already exists.")
+
+# === Helper: Run a command inside the virtual environment ===
+def run_in_venv(executable, args):
+    full_cmd = [executable] + args
+    log(f"[RUN] {' '.join(full_cmd)}")
+    subprocess.check_call(full_cmd)
+
+# === Step 3: Install required packages ===
+def install_requirements():
+    pip_path = os.path.join(VENV_PATH, "Scripts", "pip.exe")
+    run_in_venv(pip_path, ["install", "--upgrade", "pip"])
+    run_in_venv(pip_path, ["install", "-r", REQUIREMENTS_FILE])
+
+# === Step 4: Download all NLTK data ===
+def download_nltk():
+    python_path = os.path.join(VENV_PATH, "Scripts", "python.exe")
+    run_in_venv(python_path, ["-c", "import nltk; nltk.download('all')"])
+
+# === Step 5: Test that all important packages import successfully ===
+def test_imports():
+    python_path = os.path.join(VENV_PATH, "Scripts", "python.exe")
+    log("[TEST] Verifying imports in packages_to_check.py...")
+    try:
+        run_in_venv(python_path, [CHECK_SCRIPT])
+        log("[OK] All packages imported successfully.")
+    except subprocess.CalledProcessError:
+        log("[ERROR] Import check failed.")
+        sys.exit(1)
+
+# === Step 6: Test that Jupyter Lab runs and responds ===
+def test_jupyter_lab():
+    python_path = os.path.join(VENV_PATH, "Scripts", "python.exe")
+    log("[TEST] Starting Jupyter Lab...")
+    proc = subprocess.Popen([python_path, "-m", "jupyter", "lab", "--no-browser"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    time.sleep(10)  # Give it time to start
+
+    # Check if default Jupyter port 8888 is open
+    log("[TEST] Checking if port 8888 is responding...")
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    result = s.connect_ex(("localhost", 8888))
+    s.close()
+
+    if result == 0:
+        log("[OK] Jupyter Lab is running on port 8888.")
+    else:
+        log("[ERROR] Jupyter Lab did not start correctly.")
+        proc.terminate()
+        sys.exit(1)
+
+    # Kill Jupyter Lab after test
+    proc.terminate()
+
+def patch_activate_bat():
+    activate_path = os.path.join(VENV_PATH, "Scripts", "activate.bat")
+    if not os.path.exists(activate_path):
+        log("[WARN] activate.bat not found, skipping oneDNN patch.")
+        return
+
+    with open(activate_path, "r", encoding="utf-8") as f:
+        lines = f.readlines()
+
+    already_set = any("TF_ENABLE_ONEDNN_OPTS=0" in line for line in lines)
+    if already_set:
+        log("[OK] activate.bat already sets TF_ENABLE_ONEDNN_OPTS=0.")
+        return
+
+    # Insert just after the header comments (or at top)
+    insert_line = "set TF_ENABLE_ONEDNN_OPTS=0\n"
+    lines.insert(0, insert_line)
+
+    with open(activate_path, "w", encoding="utf-8") as f:
+        f.writelines(lines)
+
+    log("[INFO] Patched activate.bat to set TF_ENABLE_ONEDNN_OPTS=0.")
+
+
+# === Main entry point ===
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="ONIA Environment Setup")
+    parser.add_argument("--ignore-version", action="store_true", help="Skip Python version check")
+    args = parser.parse_args()
+
+    log("=== ONIA Environment Setup & Verification ===")
+    try:
+        check_python_version(ignore_version=args.ignore_version)
+        create_virtualenv()
+        install_requirements()
+        download_nltk()
+        patch_activate_bat()
+        test_imports()
+        test_jupyter_lab()
+        log("[SUCCESS] ONIA environment setup and verification complete.")
+    except Exception as e:
+        log(f"[FATAL] Script failed: {e}")
+        sys.exit(1)
