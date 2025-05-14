@@ -14,14 +14,16 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
 | `requirements_3.txt`         | Lista tuturor pachetelor Python necesare                                  |
 | `packages_to_check.py`       | Script de test pentru importul pachetelor                                 |
 | `start_onia_env.cmd`         | Script CMD pentru activarea rapidă a mediului și setarea variabilelor     |
+| `install_oni_utils.bat`      | Script pentru instalare python 3.11.5 si VSCode                           |
 
 ---
 ## 🔄 Instalare completă
 - Cloneaza sau downloadeaza acest repository
-- Deschide un terminal CMD sau PowerShell în acest folder (ca administrator)
+- Deschide un terminal PowerShell/CMD în acest folder (ca administrator)
  
-- Daca nu ai nici o versiune de Python sau nici VSCode, ruleaza intai: ```install_oni_utils.bat``` din terminal. Daca da. atunci skip acest pas (exemplu: laboratoarele FMI nu au nevoie!).
-   (Altfel, se va instalat local python 3.11.5 si vscode).
+- Daca nu ai nici o versiune de Python sau nici VSCode, ruleaza intai:
+- ```install_oni_utils.bat``` din terminal. Daca deja sunt instalate (ATENTIE, nu este nevoie pe PC-uri la FMI) se poate da skip acest pas.
+   Altfel, se va instalat local python 3.11.5 si VSCode.
 
 - Apoi ruleaza: 
   ```
