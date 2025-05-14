@@ -20,7 +20,7 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
 - Cloneaza sau downloadeaza acest repository
 - Deschide un terminal CMD sau PowerShell în acest folder (ca administrator)
  
-- Daca nu ai nici o versiune de Python sau nici VSCode, ruleaza intai: ```install_oni_utils.cmd``` din terminal. Daca da. atunci skip acest pas (exemplu: laboratoarele FMI nu au nevoie!).
+- Daca nu ai nici o versiune de Python sau nici VSCode, ruleaza intai: ```install_oni_utils.bat``` din terminal. Daca da. atunci skip acest pas (exemplu: laboratoarele FMI nu au nevoie!).
    (Altfel, se va instalat local python 3.11.5 si vscode).
 
 - Apoi ruleaza: 
