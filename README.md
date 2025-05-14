@@ -23,7 +23,6 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
 - ✅ Conexiune la internet (pentru descărcarea pachetelor)
 - ✅ Permisiuni de scriere în `C:\`
 
-  Daca nu aveti instalat Python 3.11.5, o sa vi se ceara acordul pentru instalare, apoi trebuie sa inchdeti terminalul si sa deschideti unul nou cu aceeasi comanda.
 
 ```
 [2025-05-14 15:30:57] [ERROR] Versiunea Python 3.11.5 este necesară. Detectat: 3.13.1
@@ -45,11 +44,11 @@ PS C:\Users\Student\Installers-main> python .\setupONIAenv.py
 ```
 python setupONIAenv.py
 ```
+  Daca nu aveti instalat Python 3.11.5, o sa vi se ceara acordul pentru instalare, apoi trebuie sa inchdeti terminalul si sa deschideti unul nou cu aceeasi comanda.
 
-Dacă nu ai versiunea exactă de Python 3.11.5, poți forța instalarea cu versiunea locala de python cu:
-
+Pentru dezintalare sau reluarea procesului in caz de eroare:
 ```
-python setupONIAenv.py --ignore-version
+python setupONIAenv.py --clean
 ```
 
 Scriptul va:
