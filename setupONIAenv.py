@@ -115,8 +115,15 @@ def install_requirements():
     python_path = os.path.join(VENV_PATH, "Scripts", "python.exe")
     log("[INFO] Upgrading pip...")
     run_pip(["install", "--upgrade", "pip"], python_path)
-    log("[INFO] Installing packages from requirements_3.txt...")
-    run_pip(["install", "-r", REQUIREMENTS_FILE], python_path)
+
+    local_cache = os.path.join(os.getcwd(), "pip_cache")
+
+    if os.path.exists(local_cache):
+        log(f"[OK] Found local pip_cache at {local_cache}. Installing packages using cache...")
+        run_pip(["install", "--no-index", f"--find-links={local_cache}", "-r", REQUIREMENTS_FILE], python_path)
+    else:
+        log("[WARN] No local pip_cache found. Falling back to install from PyPI...")
+        run_pip(["install", "-r", REQUIREMENTS_FILE], python_path)
 
 
 # === Step 4: Download all NLTK data ===
