@@ -18,20 +18,19 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
 
 ---
 ## 🔄 Instalare completă
-- Cloneaza sau downloadeaza acest repository
-- Deschide un terminal PowerShell/CMD în acest folder (ca administrator)
- 
-- Daca nu ai nici o versiune de Python sau nici VSCode, ruleaza intai:
-- ```install_oni_utils.bat``` din terminal. Daca deja sunt instalate (ATENTIE, nu este nevoie pe PC-uri la FMI) se poate da skip acest pas.
-   Altfel, se va instalat local python 3.11.5 si VSCode.
+- Cloneaza sau downloadeaza acest repository (Click pe butonul verde Code -> Download ZIP)
+- Deschide un terminal PowerShell/CMD în acest folder ca administrator
 
-- Apoi ruleaza: 
-  ```
-  python setupONIAenv.py
-  ```
+- **0. Verifica existenta unui python instalat**  cu o comanda ```python --version``` in terminal. Daca nu e gasit treci la **1**, altefel sari la **2**.
+- **1. DOAR DACA nu ai nici o versiune de Python comanda precedenta esueaza  - (exemplu lab 204 FMI sau EDIS din afara facultatii; la FMI majoritatea au deja):
+- ```install_python.bat``` din terminal pentru instalare Python 3.11.5.
+   ** INCHIDE TERMINALUL DUPA ACEST PAS si deschide altul pentru continuare, tot ca admin **
 
-  Daca nu aveti **Python 3.11.5**, se va instala (vezi output-ul de mai jos), insa va trebui sa redeshideti terminalul si sa rulati aceeasi comanda din nou pentru continuarea instalaroii.
-  
+- **2. Verifica existenta unui VSCode** cu o comanda ```code``` in termina. Daca se deschide, insteamna ca poti sa sari la pasul **4**.
+- **3** ```install_vscode.bat``` din termina pentru instalare VSCode (nu este nevoie sa inchizi terminalul)
+- **4**
+     - **Nota:** In caz ca ai alta versiune de python decat 3.11.5 (spre exemplu multe calculatoare din FMI au 3.13 instalat, ti se va cere acordul sa instaleze 3.11.5, ca in poza de mai jos. Va trebui insa sa inchideti terminalul, asa cum scrie in mesaj si sa redeschideti tot ca administrator.
+
 ```
 [2025-05-14 15:30:57] [ERROR] Versiunea Python 3.11.5 este necesară. Detectat: 3.13.1
 ❓ Vrei să instalăm automat Python 3.11.5 acum? [y/n]: y
@@ -42,6 +41,9 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
 [2025-05-14 15:31:32] [INFO] Vă rugăm să închideți și să redeschideți terminalul înainte de a continua.
 PS C:\Users\Student\Installers-main> python .\setupONIAenv.py
 ```
+
+- **Ruleaza** ```install_packages.bat``` pentru instalarea packaetelor, extensiilor de VSCode, verificarea instalarii si a compatatibilitatii intre pachete. Urmareste sa nu apara erori cu culoare rosie si sa dea [OK] la final.
+  
 
 - Pentru dezintalare sau reluarea procesului in caz de eroare:
 ```
