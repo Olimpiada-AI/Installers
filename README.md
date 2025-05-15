@@ -42,13 +42,13 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
 PS C:\Users\Student\Installers-main> python .\setupONIAenv.py
 ```
 
-- **Ruleaza** ```install_packages.bat``` pentru instalarea packaetelor, extensiilor de VSCode, verificarea instalarii si a compatatibilitatii intre pachete. Urmareste sa nu apara erori cu culoare rosie si sa dea [OK] la final.
+  - **Ruleaza** ```install_packages.bat``` pentru instalarea packaetelor, extensiilor de VSCode, verificarea instalarii si a compatatibilitatii intre pachete. Urmareste sa nu apara erori cu culoare rosie si sa dea [OK] la final.
+    
   
-
-- Pentru dezintalare sau reluarea procesului in caz de eroare:
-```
-python setupONIAenv.py --clean
-```
+  - Pentru dezintalare sau reluarea procesului in caz de eroare:
+  ```
+  python setupONIAenv.py --clean
+  ```
 
 
 ##  Activarea mediului
