@@ -10,7 +10,7 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
 ## Testare
 - Folderul **Test** contine ....
 
-  1. Activare si folosire cu **jupyter lab***
+  ### 1. Activare si folosire cu **jupyter lab***
 
    - deschide un terminal CMD sau powershell in acest folder si activeaza-l conform variantei alese in pozele de mai jos:
     ![CMD](Test/img/1_Jupyter_lab_0_activate_CMD.png)
@@ -19,8 +19,18 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
    - Se va deschide apoi un jupyter lab in browser ca in poza de mai jos. Ruleaza cu Run all toate celulele din notebook-uri si asigurate ca nu sunt erori.
    - ![Jupyter lab](Test/img/1_Jupyter_lab.png)
 
-  2. Activate si folosire cu **VS code** 
+  ### 2. Activate si folosire cu **VS code** 
 
+   - Deschide VSCode (desktop sau ruleaza din terminal ```code```)
+   - Apasa SHIFT + CTRL + P si alege **Python: select interpreter** ca in poza de mai jos:
+     ![VSCode_0](Test/img/2_VSCode_setup_0.png)
+   - Click pe Iconita cu Python ca in poza (pas 1) din poza de mai jos, apoi alege **Select another kernel** (pas 2):
+   - ![VSCode_1](Test/img/2_VSCode_setup_1.png)
+   - Click pe Python environments (poza de mai jos):
+   - ![VSCode_1](Test/img/2_VSCode_setup_2.png)
+ 
+   - Ruleaza notebook-urile ambele cu iconita de **Run All** ca in poza de mai jos si asigurate ca nu sunt erori.
+   - ![VSCode_6](Test/img/2_VSCode_setup_6.png)
 
 ## 📁 Fișiere incluse
 
