@@ -7,8 +7,6 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
 ---
 
 ## Setup Olimpiada - pentru participanti si supraveghetori.
-
-## Testare
   ### 1. Activare environment *ONIAenv*:
   - (recomandat) Navigheaza cu Explorer in folderul ```C:\ONIAenv\Scripts\```
   - Deschide CMD (nu Powershell) si ruleaza: ```activate```
