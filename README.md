@@ -13,7 +13,6 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
 - Pentru testare downloadati repo-ul prima oara
 
   ### 1. Activare si folosire cu **jupyter lab**
-
    - deschide un terminal CMD sau powershell in folderul **Test** si activeaza venv-ul de python conform variantei alese in pozele de mai jos:
     ![CMD](Test/img/1_Jupyter_lab_0_activate_CMD.png)
     ![Powershell](Test/img/1_Jupyter_lab_1_activate_Powershell.png)
@@ -24,9 +23,8 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
      ![Jupyter lab](Test/img/1_Jupyter_lab.png)
 
   ### 2. Activate si folosire cu **VS code** 
-
-   2.1 Deschide VSCode (desktop sau ruleaza din terminal ```code```)
-  
+   2.0 Activeaza environmentul *ONIAenv*, deschide un CMD ```C:\ONIAenv\Scripts\activate``` sau daca folosesti Powershell ```C:\ONIAenv\Scripts\activate.ps1```
+   2.1 Din acest terminal deschide VSCode folosind comanda ```code```.
    2.2 **File -> OpenFolder -> path/to/Test**
   
    2.3 **Selectati kernelul de ONIAenv** - necesar **DOAR** daca ai mai facut acesti pasi anterior sau ai probleme cu importul pachetelor**
