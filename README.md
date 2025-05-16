@@ -18,7 +18,8 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
 
    - Se va deschide apoi un jupyter lab in browser ca in poza de mai jos. Ruleaza cu Run all toate celulele din notebook-uri si asigurate ca nu sunt erori.
    - ![Jupyter lab](Test/img/1_Jupyter_lab.png)
-   - 
+
+  2. Activate si folosire cu **VS code** 
 
 
 ## 📁 Fișiere incluse
@@ -69,6 +70,7 @@ PS C:\Users\Student\Installers-main> python .\setupONIAenv.py
 ##  Activarea mediului
 
 Rulează:
+
 
 ```
 start_onia_env.cmd
