@@ -12,9 +12,14 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
 
   1. Activare si folosire cu **jupyter lab***
 
-   - deschide un terminal CMD sau powershell si activeaza-l conform variantei alese:
-    ![](img/1_Jupyter_lab.png)
-  
+   - deschide un terminal CMD sau powershell in acest folder si activeaza-l conform variantei alese in pozele de mai jos:
+    ![CMD](Test/img/1_Jupyter_lab_0_activate_CMD.png)
+    ![Powershell](Test/img/1_Jupyter_lab_1_activate_Powershell.png)
+
+   - Se va deschide apoi un jupyter lab in browser ca in poza de mai jos. Ruleaza cu Run all toate celulele din notebook-uri si asigurate ca nu sunt erori.
+   - ![Jupyter lab](Test/img/1_Jupyter_lab.png)
+   - 
+
 
 ## 📁 Fișiere incluse
 
