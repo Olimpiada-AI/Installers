@@ -83,6 +83,16 @@ Acesta va:
 - Dacă TensorFlow afișează avertismente legate de oneDNN, acestea sunt gestionate automat.
 - Toate acțiunile sunt salvate în `install_log.txt` pentru depanare.
 
+
+## Testare
+- Folderul **Test** contine ....
+
+  1. Activare si folosire cu **jupyter lab***
+
+    ![](img/1_Jupyter_lab.png)
+
+
+  2. Activare si folosire cu VSCode 
 ---
 
 © ONIA 2025 · Utilizare educațională · Universitatea din București 🇷🇴
