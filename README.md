@@ -6,6 +6,16 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
 
 ---
 
+
+## Testare
+- Folderul **Test** contine ....
+
+  1. Activare si folosire cu **jupyter lab***
+
+   - deschide un terminal CMD sau powershell si activeaza-l conform variantei alese:
+    ![](img/1_Jupyter_lab.png)
+  
+
 ## 📁 Fișiere incluse
 
 | Fișier                       | Descriere                                                                 |
@@ -84,12 +94,6 @@ Acesta va:
 - Toate acțiunile sunt salvate în `install_log.txt` pentru depanare.
 
 
-## Testare
-- Folderul **Test** contine ....
-
-  1. Activare si folosire cu **jupyter lab***
-
-    ![](img/1_Jupyter_lab.png)
 
 
   2. Activare si folosire cu VSCode 
