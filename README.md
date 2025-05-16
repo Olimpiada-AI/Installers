@@ -12,11 +12,13 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
 - Cele doua notebook-uri trec prin librariile de datasets, keras, pytorch, vizand o problema de NLP si una de CV.
 - Pentru testare downloadati repo-ul prima oara
 
-  ### 1. Activare si folosire cu **jupyter lab***
+  ### 1. Activare si folosire cu **jupyter lab**
 
    - deschide un terminal CMD sau powershell in folderul **Test** si activeaza venv-ul de python conform variantei alese in pozele de mai jos:
     ![CMD](Test/img/1_Jupyter_lab_0_activate_CMD.png)
     ![Powershell](Test/img/1_Jupyter_lab_1_activate_Powershell.png)
+
+    Vei sti daca s-a activat corect prin prefixul *(ONIAenv)* pus in fata, ca in poze.
 
    - Se va deschide apoi un jupyter lab in browser ca in poza de mai jos. Ruleaza cu Run all toate celulele din notebook-uri si asigurate ca nu sunt erori.
    - ![Jupyter lab](Test/img/1_Jupyter_lab.png)
