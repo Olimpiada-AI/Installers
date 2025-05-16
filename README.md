@@ -29,8 +29,6 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
     
     ![VSCode_12](Test/img/2_VSCode_Selectkernel_3.png)
 
-
-
 ## Testare
 - Folderul **Test** din acest repository contine doua notebook-uri de test pentru a asigura instalarea complete si folosirea venv-ului de python instalat local in **C:\ONIAenv** (daca nu este in aceasta locatie urmati pasii de mai jos din **Instalare completa** pentru ca PC-ul nu este configurat)
 - Cele doua notebook-uri trec prin librariile de datasets, keras, pytorch, vizand o problema de NLP si una de CV.
