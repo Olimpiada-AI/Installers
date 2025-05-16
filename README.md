@@ -26,23 +26,35 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
   ### 2. Activate si folosire cu **VS code** 
 
    2.1 Deschide VSCode (desktop sau ruleaza din terminal ```code```)
+  
    2.2 **File -> OpenFolder -> path/to/Test**
+  
    2.3 **Selectati kernelul de ONIAenv** - necesar **DOAR** daca ai mai facut acesti pasi anterior sau ai probleme cu importul pachetelor**
      - Apasa SHIFT + CTRL + P si alege **Python: select interpreter** ca in poza de mai jos:
+     - 
        ![VSCode_0](Test/img/2_VSCode_setup_0.png)
+       
      - Alege **Enter interpreter path**:
+     - 
        ![VSCode_0](Test/img/2_VSCode_setup_01.png)
+       
      - Pune destinatia venv-ului: **C:\ONIAenv\Scripts\python.exe**
+       
      - ![VSCode_1](Test/img/2_VSCode_setup_02.png)
+       
      - Deschide unul din notebook-uri sau propriul tau cod de python.
        Ca sa selectezi kernel-ul configurat anterior, urmati pasii 1,2,3,4 ca in pozele de mai jos.
        (Atentie poate fi deja un *Python3.11.5* selectat default ca in poza de mai jos, ori poate scrie generic *Select Kernel*)
+       
        ![VSCode_1](Test/img/2_VSCode_setup_1.png)
+       
        ![VSCode_1](Test/img/2_VSCode_setup_2.png)
+       
        ![VSCode_1](Test/img/2_VSCode_setup_3.png)
   
   2.4  Ruleaza notebook-urile ambele cu iconita de **Run All** ca in poza de mai jos si asigurate ca nu sunt erori.
        Nota: Cu verde, am macat cum ar trebui sa arate configuratia corecta a kernelului curent. Daca nu este corect, reluati pasul 2.3
+  
        ![VSCode_6](Test/img/2_VSCode_setup_6.png)
 
 ---
