@@ -8,11 +8,12 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
 
 
 ## Testare
-- Folderul **Test** contine ....
+- Folderul **Test** din acest repository contine doua notebook-uri de test pentru a asigura instalarea complete si folosirea venv-ului de python instalat local in **C:\ONIAenv** (daca nu este in aceasta locatie urmati pasii de mai jos din **Instalare completa** pentru ca PC-ul nu este configurat)
+- Pentru testare downloadati repo-ul prima oara
 
   ### 1. Activare si folosire cu **jupyter lab***
 
-   - deschide un terminal CMD sau powershell in acest folder si activeaza-l conform variantei alese in pozele de mai jos:
+   - deschide un terminal CMD sau powershell in folderul **Test** si activeaza venv-ul de python conform variantei alese in pozele de mai jos:
     ![CMD](Test/img/1_Jupyter_lab_0_activate_CMD.png)
     ![Powershell](Test/img/1_Jupyter_lab_1_activate_Powershell.png)
 
@@ -22,6 +23,7 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
   ### 2. Activate si folosire cu **VS code** 
 
    - Deschide VSCode (desktop sau ruleaza din terminal ```code```)
+   - **File -> OpenFolder -> path/to/Test**
    - Apasa SHIFT + CTRL + P si alege **Python: select interpreter** ca in poza de mai jos:
      ![VSCode_0](Test/img/2_VSCode_setup_0.png)
    - Click pe Iconita cu Python ca in poza (pas 1) din poza de mai jos, apoi alege **Select another kernel** (pas 2):
