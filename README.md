@@ -9,6 +9,7 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
 
 ## Testare
 - Folderul **Test** din acest repository contine doua notebook-uri de test pentru a asigura instalarea complete si folosirea venv-ului de python instalat local in **C:\ONIAenv** (daca nu este in aceasta locatie urmati pasii de mai jos din **Instalare completa** pentru ca PC-ul nu este configurat)
+- Cele doua notebook-uri trec prin librariile de datasets, keras, pytorch, vizand o problema de NLP si una de CV.
 - Pentru testare downloadati repo-ul prima oara
 
   ### 1. Activare si folosire cu **jupyter lab***
@@ -26,9 +27,13 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
    - **File -> OpenFolder -> path/to/Test**
    - Apasa SHIFT + CTRL + P si alege **Python: select interpreter** ca in poza de mai jos:
      ![VSCode_0](Test/img/2_VSCode_setup_0.png)
-   - Click pe Iconita cu Python ca in poza (pas 1) din poza de mai jos, apoi alege **Select another kernel** (pas 2):
-   - ![VSCode_1](Test/img/2_VSCode_setup_1.png)
-   - Click pe Python environments (poza de mai jos):
+   - Alege **Enter interpreter path**:
+     ![VSCode_0](Test/img/2_VSCode_setup_01.png)
+   - Pune destinatia venv-ului: **C:\ONIAenv\Scripts\python.exe**
+   - ![VSCode_1](Test/img/2_VSCode_setup_02.png)
+   - Deschide unul din notebook-uri sau propriul tau cod de python.
+     Ca sa selectezi kernel-ul configurat anterior, urmati pasii 1 si 2 din poza de mai jos.
+     (Atentie poate fi deja unul selectat default ca in poza de mai jos, ori poate scrie generic *Select Kernel*
    - ![VSCode_1](Test/img/2_VSCode_setup_2.png)
  
    - Ruleaza notebook-urile ambele cu iconita de **Run All** ca in poza de mai jos si asigurate ca nu sunt erori.
