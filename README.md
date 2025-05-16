@@ -20,15 +20,15 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
   ### 3. Daca folosesti ***VSCode**:
   - Dupa ce ti-ai creat un fisier *nume.ipynb* sau *nume.py* fa pasii din poza pentru selectarea Kernelului de python corect din ONIAenv, **DOAR DACA** nu ai deja kernelul de python potrivit, asa cum arata in poze de mai jos (sau in caz exceptional, daca apare doar Python 3.11.5, da-ti click pe el si **NU** va arata calea completa catre ONIAenv).
 
-  - ![VSCode_11](Test/img/2_VSCode_Selectkernel_4)
+  - ![VSCode_11](Test/img/2_VSCode_Selectkernel_4.png)
 
   - **DOAR DACA** nu ai validat pasul de mai sus, fa setup-ul din urmatorii 3 pasi:
 
-    ![VSCode_11](Test/img/2_VSCode_Selectkernel_1)
+    ![VSCode_11](Test/img/2_VSCode_Selectkernel_1.png)
     
-    ![VSCode_12](Test/img/2_VSCode_Selectkernel_2)
+    ![VSCode_12](Test/img/2_VSCode_Selectkernel_2.png)
     
-    ![VSCode_12](Test/img/2_VSCode_Selectkernel_3)
+    ![VSCode_12](Test/img/2_VSCode_Selectkernel_3.png)
 
 
 
