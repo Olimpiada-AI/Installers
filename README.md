@@ -10,9 +10,10 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
 
 ## Testare
   ### 1. Activare environment *ONIAenv*:
-  - (recomandat) Daca navigheaza cu Explorer in folderul ```C:\ONIAenv\Scripts\``` si ruleaza ```activate``` din terminal CMD:
-    (comanda ```C:\ONIAenv\Scripts\activate``` este accesibila de oriunde)
-  - Daca folosesti Powershell ```C:\ONIAenv\Scripts\activate.ps1```
+  - (recomandat) Navigheaza cu Explorer in folderul ```C:\ONIAenv\Scripts\```
+  - Deschide CMD (nu Powershell) si ruleaza: ```activate```
+    (de asemenea, comanda ```C:\ONIAenv\Scripts\activate``` este accesibila de oriunde)
+  - Daca totusi doresti sa folosesti Powershell: ```C:\ONIAenv\Scripts\activate.ps1```
 
   ### 2. Daca folosesti **jupyter lab**:
   - Din acest environment ruleaza ```jupyter lab```
