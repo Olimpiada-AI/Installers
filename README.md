@@ -21,7 +21,7 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
     Vei sti daca s-a activat corect prin prefixul *(ONIAenv)* pus in fata, ca in poze.
 
    - Se va deschide apoi un jupyter lab in browser ca in poza de mai jos. Ruleaza cu Run all toate celulele din notebook-uri si asigurate ca nu sunt erori.
-   - ![Jupyter lab](Test/img/1_Jupyter_lab.png)
+     ![Jupyter lab](Test/img/1_Jupyter_lab.png)
 
   ### 2. Activate si folosire cu **VS code** 
 
@@ -40,7 +40,7 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
        
      - Pune destinatia venv-ului: **C:\ONIAenv\Scripts\python.exe**
        
-     - ![VSCode_1](Test/img/2_VSCode_setup_02.png)
+       ![VSCode_1](Test/img/2_VSCode_setup_02.png)
        
      - Deschide unul din notebook-uri sau propriul tau cod de python.
        Ca sa selectezi kernel-ul configurat anterior, urmati pasii 1,2,3,4 ca in pozele de mai jos.
