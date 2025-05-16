@@ -6,6 +6,31 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
 
 ---
 
+## Setup Olimpiada - pentru participanti si supraveghetori.
+
+## Testare
+  ### 1. Activare environment *ONIAenv*:
+  - (recomandat) Daca navigheaza cu Explorer in folderul ```C:\ONIAenv\Scripts\``` si ruleaza ```activate``` din terminal CMD:
+    (comanda ```C:\ONIAenv\Scripts\activate``` este accesibila de oriunde)
+  - Daca folosesti Powershell ```C:\ONIAenv\Scripts\activate.ps1```
+
+  ### 2. Daca folosesti **jupyter lab**:
+  - Din acest environment ruleaza ```jupyter lab```
+
+  ### 3. Daca folosesti ***VSCode**:
+  - Dupa ce ti-ai creat un fisier *nume.ipynb* sau *nume.py* fa pasii din poza pentru selectarea Kernelului de python corect din ONIAenv, **DOAR DACA** nu ai deja kernelul de python potrivit, asa cum arata in poze de mai jos (sau in caz exceptional, daca apare doar Python 3.11.5, da-ti click pe el si **NU** va arata calea completa catre ONIAenv).
+
+  - ![VSCode_11](Test/img/2_VSCode_Selectkernel_4)
+
+  - **DOAR DACA** nu ai validat pasul de mai sus, fa setup-ul din urmatorii 3 pasi:
+
+    ![VSCode_11](Test/img/2_VSCode_Selectkernel_1)
+    
+    ![VSCode_12](Test/img/2_VSCode_Selectkernel_2)
+    
+    ![VSCode_12](Test/img/2_VSCode_Selectkernel_3)
+
+
 
 ## Testare
 - Folderul **Test** din acest repository contine doua notebook-uri de test pentru a asigura instalarea complete si folosirea venv-ului de python instalat local in **C:\ONIAenv** (daca nu este in aceasta locatie urmati pasii de mai jos din **Instalare completa** pentru ca PC-ul nu este configurat)
@@ -47,29 +72,6 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
   
     ![VSCode_6](Test/img/2_VSCode_setup_6.png)
 
-## Setup Olimpiada
-
-## Testare
-  ### 1. Activare environment *ONIAenv*:
-  - (recomandat) Daca navigheaza cu Explorer in folderul ```C:\ONIAenv\Scripts\``` si ruleaza ```activate``` din terminal CMD:
-    (comanda ```C:\ONIAenv\Scripts\activate``` este accesibila de oriunde)
-  - Daca folosesti Powershell ```C:\ONIAenv\Scripts\activate.ps1```
-
-  ### 2. Daca folosesti **jupyter lab**:
-  - Din acest environment ruleaza ```jupyter lab```
-
-  ### 3. Daca folosesti ***VSCode**:
-  - Dupa ce ti-ai creat un fisier *nume.ipynb* sau *nume.py* fa pasii din poza pentru selectarea Kernelului de python corect din ONIAenv, **DOAR DACA** nu ai deja kernelul de python potrivit, asa cum arata in poze de mai jos (sau in caz exceptional, daca apare doar Python 3.11.5, da-ti click pe el si **NU** va arata calea completa catre ONIAenv).
-
-  - ![VSCode_11](Test/img/2_VSCode_Selectkernel_4)
-
-  - **DOAR DACA** nu ai validat pasul de mai sus, fa setup-ul din urmatorii 3 pasi:
-
-    ![VSCode_11](Test/img/2_VSCode_Selectkernel_1)
-    
-    ![VSCode_12](Test/img/2_VSCode_Selectkernel_2)
-    
-    ![VSCode_12](Test/img/2_VSCode_Selectkernel_3)
 
 ---
 ## 🔄 Instalare completă
