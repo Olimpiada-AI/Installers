@@ -32,16 +32,6 @@ Acest proiect automatizează instalarea și verificarea completă a unui mediu P
    - Ruleaza notebook-urile ambele cu iconita de **Run All** ca in poza de mai jos si asigurate ca nu sunt erori.
    - ![VSCode_6](Test/img/2_VSCode_setup_6.png)
 
-## 📁 Fișiere incluse
-
-| Fișier                       | Descriere                                                                 |
-|------------------------------|---------------------------------------------------------------------------|
-| `setupONIAenv.py`            | Script Python care instalează mediul virtual și pachetele necesare        |
-| `requirements_3.txt`         | Lista tuturor pachetelor Python necesare                                  |
-| `packages_to_check.py`       | Script de test pentru importul pachetelor                                 |
-| `start_onia_env.cmd`         | Script CMD pentru activarea rapidă a mediului și setarea variabilelor     |
-| `install_oni_utils.bat`      | Script pentru instalare python 3.11.5 si VSCode                           |
-
 ---
 ## 🔄 Instalare completă
 - Cloneaza sau downloadeaza acest repository (Click pe butonul verde Code -> Download ZIP)
@@ -110,6 +100,15 @@ Acesta va:
 - Dacă TensorFlow afișează avertismente legate de oneDNN, acestea sunt gestionate automat.
 - Toate acțiunile sunt salvate în `install_log.txt` pentru depanare.
 
+### 📁 Fișiere incluse
+
+| Fișier                       | Descriere                                                                 |
+|------------------------------|---------------------------------------------------------------------------|
+| `setupONIAenv.py`            | Script Python care instalează mediul virtual și pachetele necesare        |
+| `requirements_3.txt`         | Lista tuturor pachetelor Python necesare                                  |
+| `packages_to_check.py`       | Script de test pentru importul pachetelor                                 |
+| `start_onia_env.cmd`         | Script CMD pentru activarea rapidă a mediului și setarea variabilelor     |
+| `install_oni_utils.bat`      | Script pentru instalare python 3.11.5 si VSCode                           |
 
 
 
